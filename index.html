@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Guilherme - Cantor Sertanejo em Ascensão | Site Oficial</title>
-    <meta name="description" content="Site oficial de João Guilherme, cantor sertanejo de Goiás. Ouça músicas, veja agenda de shows e entre em contato para contratações.">
-    <meta name="keywords" content="João Guilherme, cantor sertanejo, Goiás, Mineiros, música sertaneja, shows, contratação">
+    <title>João Guilherme - A Nova Voz do Sertanejo Pop</title>
+    <meta name="description" content="João Guilherme - Cantor sertanejo/pop. Reserve shows, ouça músicas exclusivas e faça parte do Fã Clube VIP. Sua próxima atração está aqui!">
+    <meta name="keywords" content="João Guilherme, sertanejo, pop, shows, música, contratação">
     
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="João Guilherme - A Nova Voz do Sertanejo">
-    <meta property="og:description" content="Cantor sertanejo de 16 anos de Goiás. Ouça suas músicas e acompanhe sua trajetória.">
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://joaoguilhermecantor.com.br">
+    <meta property="og:url" content="https://joaoguilherme.com/">
+    <meta property="og:title" content="João Guilherme - A Nova Voz do Sertanejo Pop">
+    <meta property="og:description" content="Reserve shows, ouça músicas exclusivas e faça parte do Fã Clube VIP">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="João Guilherme - A Nova Voz do Sertanejo Pop">
+    
+    <!-- PWA -->
+    <meta name="theme-color" content="#0A3D62">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,680 +31,1174 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-gold': '#D4AF37',
-                        'brand-dark': '#2C1810',
-                        'brand-earth': '#8B6F47',
-                        'brand-light': '#F7F3E9',
-                        'brand-accent': '#B8860B'
+                        'dark-primary': '#0F172A',
+                        'dark-secondary': '#1E293B',
+                        'dark-accent': '#334155',
+                        'gold-primary': '#F59E0B',
+                        'gold-accent': '#FBBF24',
+                        'gold-light': '#FEF3C7'
                     },
                     fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
-                        'body': ['Inter', 'sans-serif']
+                        'inter': ['Inter', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #2C1810 0%, #8B6F47 50%, #D4AF37 100%);
+        * {
+            font-family: 'Inter', sans-serif;
         }
         
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        .gradient-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
         }
         
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .floating-cta {
-            position: fixed;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            z-index: 1000;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: translateY(-50%) scale(1); }
-            50% { transform: translateY(-50%) scale(1.05); }
-        }
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-        
-        .music-wave {
-            background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.1) 50%, transparent 70%);
-            background-size: 20px 20px;
-            animation: wave 3s linear infinite;
-        }
-        
-        @keyframes wave {
-            0% { background-position: 0 0; }
-            100% { background-position: 20px 0; }
-        }
-        
-        .sticky-header {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-        }
-        
-        .logo-text {
-            background: linear-gradient(135deg, #D4AF37, #B8860B);
+        .gradient-text {
+            background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #FEF3C7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hover-glow:hover {
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.4);
+            transform: translateY(-3px);
+            transition: all 0.4s ease;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .chatbot-pulse {
+            animation: chatbot-pulse 2s infinite;
+        }
+        
+        @keyframes chatbot-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+        
+        .notification-slide {
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .notification-slide.show {
+            transform: translateX(0);
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 75% 75%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-padding {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .mobile-text {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .mobile-hero-img {
+                width: 280px;
+                height: 280px;
+            }
+        }
     </style>
 </head>
-
-<body class="font-body bg-white text-gray-800">
-    <!-- Newsletter Popup -->
-    <div id="newsletter-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
-        <div class="bg-white rounded-2xl p-8 max-w-md mx-4 relative">
-            <button id="close-popup" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-xl"></i>
-            </button>
-            <div class="text-center">
-                <div class="text-4xl mb-4">🎵</div>
-                <h3 class="text-2xl font-display font-bold text-brand-dark mb-4">Não perca nenhum lançamento!</h3>
-                <p class="text-gray-600 mb-6">Seja o primeiro a saber sobre novas músicas, shows e novidades do João Guilherme.</p>
-                <form id="newsletter-form" class="space-y-4">
-                    <input type="email" placeholder="Seu melhor e-mail" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-gold" required>
-                    <button type="submit" class="w-full bg-brand-gold hover:bg-brand-accent text-white py-3 rounded-lg font-semibold transition-colors">
-                        Quero ser avisado! 🔔
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating CTAs -->
-    <div class="floating-cta hidden lg:block">
-        <div class="bg-brand-gold text-white px-4 py-2 rounded-full shadow-lg text-sm font-semibold">
-            <a href="#musicas" class="block">🎵 Ouça Agora</a>
-        </div>
-    </div>
-
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/5562999999999?text=Olá! Gostaria de falar sobre contratação do João Guilherme" 
-       class="whatsapp-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-colors"
-       target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp text-2xl"></i>
-        <div class="absolute -top-2 -left-2 bg-red-500 text-white text-xs rounded-full px-2 py-1">
-            Fale conosco
-        </div>
-    </a>
-
-    <!-- Header -->
-    <header class="sticky-header fixed w-full top-0 z-40 py-4 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-brand-gold rounded-full flex items-center justify-center">
-                    <i class="fas fa-music text-white"></i>
+<body class="bg-dark-primary text-white scroll-smooth">
+    <!-- Header Fixo -->
+    <header class="fixed top-0 w-full z-50 gradient-bg glass-effect">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text">
+                    João Guilherme
                 </div>
-                <h1 class="text-2xl font-display font-bold logo-text">João Guilherme</h1>
-            </div>
-            
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="hover:text-brand-gold transition-colors font-medium">Início</a>
-                <a href="#sobre" class="hover:text-brand-gold transition-colors font-medium">Sobre</a>
-                <a href="#musicas" class="hover:text-brand-gold transition-colors font-medium">Músicas</a>
-                <a href="#agenda" class="hover:text-brand-gold transition-colors font-medium">Shows</a>
-                <a href="#galeria" class="hover:text-brand-gold transition-colors font-medium">Galeria</a>
-                <a href="#contato" class="hover:text-brand-gold transition-colors font-medium">Contato</a>
-            </nav>
-            
-            <div class="flex items-center space-x-4">
-                <button class="bg-brand-gold hover:bg-brand-accent text-white px-6 py-2 rounded-full font-semibold transition-colors">
-                    Contratar Show
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="hover:text-gold-accent transition-colors">Início</a>
+                    <a href="#agenda" class="hover:text-gold-accent transition-colors">Agenda</a>
+                    <a href="#contratacao" class="hover:text-gold-accent transition-colors">Contratação</a>
+                    <a href="#contato" class="hover:text-gold-accent transition-colors">Contato</a>
+                </div>
+                
+                <button onclick="openWhatsApp('Olá! Gostaria de reservar um show com João Guilherme')" 
+                        class="bg-gold-primary hover:bg-gold-accent px-6 py-2 rounded-full font-semibold hover-glow transition-all text-dark-primary">
+                    Reservar Show
                 </button>
-                <button id="mobile-menu" class="md:hidden">
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
-        </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#inicio" class="hover:text-gold-accent transition-colors">Início</a>
+                    <a href="#agenda" class="hover:text-gold-accent transition-colors">Agenda</a>
+                    <a href="#contratacao" class="hover:text-gold-accent transition-colors">Contratação</a>
+                    <a href="#contato" class="hover:text-gold-accent transition-colors">Contato</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
-        <div class="absolute inset-0 music-wave opacity-20"></div>
-        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="text-white">
-                <div class="fade-in">
-                    <span class="inline-block bg-brand-gold px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                        🎤 A Nova Voz do Sertanejo
-                    </span>
-                    <h1 class="text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight">
-                        João <span class="text-brand-gold">Guilherme</span>
+    <section id="inicio" class="min-h-screen gradient-bg hero-pattern flex items-center pt-20">
+        <div class="container mx-auto mobile-padding px-6">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div class="order-2 lg:order-1 text-center lg:text-left">
+                    <h1 class="text-4xl mobile-text md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <span class="gradient-text block">João Guilherme</span>
+                        <span class="text-white block mt-2">A nova voz do</span>
+                        <span class="text-gold-accent block">sertanejo pop</span>
                     </h1>
-                    <p class="text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
-                        Aos 16 anos, direto de Mineiros-GO, trazendo emoção e autenticidade para o sertanejo contemporâneo.
+                    
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0">
+                        Sua próxima atração está aqui. Transforme seu evento em uma experiência inesquecível.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <button class="bg-white text-brand-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
-                            <i class="fas fa-play"></i>
-                            <span>Ouça Agora</span>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button onclick="openWhatsApp('Olá! Gostaria de reservar um show com João Guilherme')" 
+                                class="bg-gold-primary hover:bg-gold-accent text-dark-primary px-8 py-4 rounded-full font-bold hover-glow transition-all flex items-center justify-center shadow-lg">
+                            <i class="fas fa-ticket-alt mr-2"></i> Reserve Seu Show
                         </button>
-                        <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-dark transition-colors">
-                            Ver Shows
-                        </button>
-                    </div>
-                    
-                    <!-- Social Links -->
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-white hover:text-brand-gold transition-colors text-2xl" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-brand-gold transition-colors text-2xl" aria-label="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-brand-gold transition-colors text-2xl" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-brand-gold transition-colors text-2xl" aria-label="Spotify">
-                            <i class="fab fa-spotify"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="fade-in">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-brand-gold rounded-3xl transform rotate-6"></div>
-                    <div class="relative bg-white rounded-3xl p-2 shadow-2xl">
-                        <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl h-96 lg:h-[500px] flex items-center justify-center">
-                            <div class="text-center text-gray-600">
-                                <i class="fas fa-camera text-6xl mb-4"></i>
-                                <p class="text-lg font-semibold">Foto Principal do Artista</p>
-                                <p class="text-sm opacity-75">Imagem de impacto profissional</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="sobre" class="py-20 bg-brand-light">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-display font-bold text-brand-dark mb-6">Sobre o Artista</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Conheça a história por trás da voz que está conquistando o Brasil
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="fade-in">
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-display font-bold text-brand-dark mb-6">A Jornada Musical</h3>
-                        <p class="text-gray-700 leading-relaxed mb-6">
-                            João Guilherme nasceu em Mineiros, Goiás, e desde pequeno demonstrava paixão pela música sertaneja. Aos 16 anos, já conquistou milhares de fãs com sua voz marcante e interpretações emocionantes que misturam a tradição sertaneja com elementos contemporâneos.
-                        </p>
-                        <p class="text-gray-700 leading-relaxed mb-6">
-                            Influenciado por grandes nomes como Luan Santana, Zezé Di Camargo e Bruno & Marrone, João desenvolve um estilo único que combina melodias marcantes com storytelling envolvente, tocando o coração de quem escuta.
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-6 mt-8">
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-brand-gold">16</div>
-                                <div class="text-sm text-gray-600">Anos de idade</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-brand-gold">50K+</div>
-                                <div class="text-sm text-gray-600">Seguidores</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="fade-in">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white rounded-xl p-6 h-48 flex items-center justify-center shadow-lg">
-                            <div class="text-center text-gray-600">
-                                <i class="fas fa-guitar text-4xl mb-3 text-brand-gold"></i>
-                                <p class="font-semibold">Estúdio</p>
-                            </div>
-                        </div>
-                        <div class="bg-white rounded-xl p-6 h-48 flex items-center justify-center shadow-lg">
-                            <div class="text-center text-gray-600">
-                                <i class="fas fa-microphone text-4xl mb-3 text-brand-gold"></i>
-                                <p class="font-semibold">Performance</p>
-                            </div>
-                        </div>
-                        <div class="bg-white rounded-xl p-6 h-48 flex items-center justify-center shadow-lg col-span-2">
-                            <div class="text-center text-gray-600">
-                                <i class="fas fa-heart text-4xl mb-3 text-brand-gold"></i>
-                                <p class="font-semibold">Bastidores</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 text-center">
-                        <button class="bg-brand-gold hover:bg-brand-accent text-white px-8 py-3 rounded-full font-semibold transition-colors">
-                            📄 Download Press Kit
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Music Section -->
-    <section id="musicas" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-display font-bold text-brand-dark mb-6">Músicas</h2>
-                <p class="text-xl text-gray-600">Ouça os últimos lançamentos e covers emocionantes</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="fade-in bg-gradient-to-br from-brand-gold to-brand-accent rounded-2xl p-6 text-white">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm font-semibold">🔥 Novo</span>
-                        <i class="fas fa-play text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Coração Sertanejo</h3>
-                    <p class="opacity-90 mb-4">Música autoral</p>
-                    <div class="flex items-center space-x-4">
-                        <button class="bg-white text-brand-dark px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
-                            <i class="fab fa-spotify mr-2"></i>Spotify
-                        </button>
-                        <button class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-30 transition-colors">
-                            <i class="fab fa-youtube mr-2"></i>YouTube
+                        <button onclick="document.getElementById('contratacao').scrollIntoView({behavior: 'smooth'})" 
+                                class="border-2 border-gold-primary hover:bg-gold-primary hover:text-dark-primary text-gold-primary px-8 py-4 rounded-full font-semibold hover-glow transition-all flex items-center justify-center">
+                            <i class="fas fa-info-circle mr-2"></i> Saiba Mais
                         </button>
                     </div>
                 </div>
                 
-                <div class="fade-in bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-brand-gold transition-colors">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-brand-light text-brand-dark px-3 py-1 rounded-full text-sm font-semibold">Cover</span>
-                        <i class="fas fa-play text-2xl text-brand-gold"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-brand-dark">Evidências</h3>
-                    <p class="text-gray-600 mb-4">Chitãozinho & Xororó</p>
-                    <div class="flex items-center space-x-4">
-                        <button class="bg-brand-gold text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-accent transition-colors">
-                            <i class="fab fa-youtube mr-2"></i>Assistir
-                        </button>
-                        <span class="text-sm text-gray-500">2.1M visualizações</span>
-                    </div>
-                </div>
-                
-                <div class="fade-in bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-brand-gold transition-colors">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-brand-light text-brand-dark px-3 py-1 rounded-full text-sm font-semibold">Cover</span>
-                        <i class="fas fa-play text-2xl text-brand-gold"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-brand-dark">Meteoro</h3>
-                    <p class="text-gray-600 mb-4">Luan Santana</p>
-                    <div class="flex items-center space-x-4">
-                        <button class="bg-brand-gold text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-accent transition-colors">
-                            <i class="fab fa-youtube mr-2"></i>Assistir
-                        </button>
-                        <span class="text-sm text-gray-500">890K visualizações</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12 fade-in">
-                <button class="bg-brand-dark hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors">
-                    <i class="fab fa-youtube mr-2"></i>Ver Todos os Vídeos
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shows Section -->
-    <section id="agenda" class="py-20 bg-brand-light">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-display font-bold text-brand-dark mb-6">Agenda de Shows</h2>
-                <p class="text-xl text-gray-600">Próximas apresentações e eventos</p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto space-y-6">
-                <div class="fade-in bg-white rounded-2xl p-6 shadow-lg border-l-4 border-brand-gold">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div class="mb-4 md:mb-0">
-                            <div class="flex items-center space-x-4 mb-2">
-                                <div class="bg-brand-gold text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                    16 AGO
+                <div class="order-1 lg:order-2 flex justify-center">
+                    <div class="relative">
+                        <div class="mobile-hero-img w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gold-primary floating shadow-2xl">
+                            <img src="https://drive.google.com/uc?export=view&id=1EJjOa9h4pyboEK2hJj9xiMj5o5xBV1n4" 
+                                 alt="João Guilherme - Cantor Sertanejo Pop" 
+                                 class="w-full h-full object-cover"
+                                 crossorigin="anonymous"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <!-- Fallback for when image doesn't load -->
+                            <div class="w-full h-full bg-gradient-to-br from-gold-primary to-gold-accent flex items-center justify-center" style="display: none;">
+                                <div class="text-center">
+                                    <i class="fas fa-user-circle text-8xl text-dark-primary mb-4"></i>
+                                    <p class="text-dark-primary font-bold text-xl">João Guilherme</p>
+                                    <p class="text-dark-secondary">Cantor Sertanejo Pop</p>
                                 </div>
-                                <h3 class="text-xl font-bold text-brand-dark">Resenha Bar</h3>
                             </div>
-                            <p class="text-gray-600 flex items-center">
-                                <i class="fas fa-map-marker-alt mr-2 text-brand-gold"></i>
-                                Mineiros, Goiás
-                            </p>
-                            <p class="text-gray-500 text-sm mt-1">21:00 - Show acústico</p>
                         </div>
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">
-                                A confirmar
-                            </span>
-                            <button class="bg-brand-gold hover:bg-brand-accent text-white px-6 py-2 rounded-full font-semibold transition-colors">
-                                Mais Info
+                        <div class="absolute -top-4 -right-4 w-8 h-8 bg-gold-accent rounded-full pulse-animation"></div>
+                        <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-gold-light rounded-full pulse-animation"></div>
+                        <!-- Glow effect behind the image -->
+                        <div class="absolute inset-0 bg-gold-primary rounded-full blur-xl opacity-30 -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Agenda Interativa -->
+    <section id="agenda" class="py-20 bg-dark-secondary">
+        <div class="container mx-auto mobile-padding px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Agenda de Shows</h2>
+                <p class="text-gray-300 text-lg">As datas esgotam rápido. Garante já!</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Lista de Shows -->
+                <div class="space-y-6">
+                    <div class="glass-effect rounded-xl p-6 card-hover transition-all">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 space-y-3 md:space-y-0">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Mineiros, GO</h3>
+                                <p class="text-gray-400">Show Particular</p>
+                                <p class="text-gold-accent font-semibold">Sábado, 2 de Agosto, 2025</p>
+                            </div>
+                            <div class="text-left md:text-right">
+                                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Privado</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                            <button onclick="openWhatsApp('Olá! Gostaria de saber mais sobre shows particulares')" class="bg-gold-primary hover:bg-gold-accent text-dark-primary px-6 py-3 rounded-full font-semibold hover-glow transition-all flex-1">
+                                💬 Informações
+                            </button>
+                            <button onclick="addToCalendar('mineiros-particular')" class="border border-gold-primary hover:bg-gold-primary hover:text-dark-primary text-gold-primary px-4 py-3 rounded-full hover-glow transition-all">
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-effect rounded-xl p-6 card-hover transition-all">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 space-y-3 md:space-y-0">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Mineiros, GO</h3>
+                                <p class="text-gray-400">IPE Shopping</p>
+                                <p class="text-gold-accent font-semibold">Sexta, 29 de Agosto, 2025</p>
+                            </div>
+                            <div class="text-left md:text-right">
+                                <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm">Confirmado</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                            <button onclick="openWhatsApp('Olá! Gostaria de saber mais sobre o show no IPE Shopping')" class="bg-gold-primary hover:bg-gold-accent text-dark-primary px-6 py-3 rounded-full font-semibold hover-glow transition-all flex-1">
+                                ℹ️ Mais Informações
+                            </button>
+                            <button onclick="addToCalendar('ipe-shopping')" class="border border-gold-primary hover:bg-gold-primary hover:text-dark-primary text-gold-primary px-4 py-3 rounded-full hover-glow transition-all">
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button onclick="viewFullSchedule()" class="border-2 border-gold-primary hover:bg-gold-primary hover:text-dark-primary text-gold-primary px-8 py-3 rounded-full font-semibold hover-glow transition-all">
+                            Ver Agenda Completa
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contratação -->
+    <section id="contratacao" class="py-20 bg-dark-primary">
+        <div class="container mx-auto mobile-padding px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Contratação</h2>
+                <p class="text-gray-300 text-lg">Sua próxima atração está aqui.</p>
+                <p class="text-gold-accent font-semibold">Transforme seu evento em um show inesquecível.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Formulário -->
+                    <div class="glass-effect rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6">Solicitar Orçamento</h3>
+                        <form id="booking-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Nome Completo</label>
+                                    <input type="text" id="name" required class="w-full bg-dark-secondary border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-accent focus:outline-none transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Telefone/WhatsApp</label>
+                                    <input type="tel" id="phone" required class="w-full bg-dark-secondary border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-accent focus:outline-none transition-colors">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2">E-mail</label>
+                                <input type="email" id="email" required class="w-full bg-dark-secondary border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-accent focus:outline-none transition-colors">
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Tipo de Evento</label>
+                                    <select id="event-type" required class="w-full bg-dark-secondary border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-accent focus:outline-none transition-colors">
+                                        <option value="">Selecione</option>
+                                        <option value="show">Show/Festival</option>
+                                        <option value="casamento">Casamento</option>
+                                        <option value="corporativo">Evento Corporativo</option>
+                                        <option value="aniversario">Aniversário</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Data do Evento</label>
+                                    <input type="date" id="event-date" required class="w-full bg-dark-secondary border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-accent focus:outline-none transition-colors">
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Cidade</label>
+                                    <input type="text" id="city" required class="w-full bg-dark-secondary border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-accent focus:outline-none transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Público Estimado</label>
+                                    <select id="audience" required class="w-full bg-dark-secondary border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-accent focus:outline-none transition-colors">
+                                        <option value="">Selecione</option>
+                                        <option value="ate-100">Até 100 pessoas</option>
+                                        <option value="100-500">100 a 500 pessoas</option>
+                                        <option value="500-1000">500 a 1.000 pessoas</option>
+                                        <option value="1000-5000">1.000 a 5.000 pessoas</option>
+                                        <option value="5000+">Mais de 5.000 pessoas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Observações</label>
+                                <textarea id="message" rows="4" class="w-full bg-dark-secondary border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-accent focus:outline-none transition-colors" placeholder="Conte mais sobre seu evento..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-gold-primary hover:bg-gold-accent text-dark-primary py-4 rounded-lg font-bold hover-glow transition-all shadow-lg">
+                                Solicitar Orçamento Agora
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Informações e WhatsApp -->
+                    <div class="space-y-8">
+                        <div class="glass-effect rounded-xl p-8">
+                            <h3 class="text-2xl font-semibold mb-6">Contato Direto</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                        <i class="fab fa-whatsapp text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">WhatsApp</p>
+                                        <p class="text-gray-400">Resposta em até 2 horas</p>
+                                    </div>
+                                </div>
+                                <button onclick="openWhatsApp('Olá! Gostaria de contratar João Guilherme para um evento')" 
+                                        class="w-full bg-green-500 hover:bg-green-600 py-3 rounded-lg font-semibold hover-glow transition-all shadow-lg">
+                                    <i class="fab fa-whatsapp mr-2"></i> Falar no WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-effect rounded-xl p-8">
+                            <h3 class="text-xl font-semibold mb-4">Por que escolher João Guilherme?</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-gold-accent mt-1"></i>
+                                    <p class="text-gray-300">Artista em ascensão no cenário sertanejo</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-gold-accent mt-1"></i>
+                                    <p class="text-gray-300">Repertório de 3+ horas</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-gold-accent mt-1"></i>
+                                    <p class="text-gray-300">Atende Mineiros e toda região</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-gold-accent mt-1"></i>
+                                    <p class="text-gray-300">Equipamento profissional incluso</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-gold-accent mt-1"></i>
+                                    <p class="text-gray-300">Garantia de satisfação</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <p class="text-gray-400 mb-4">Garanta sua data</p>
+                            <button onclick="openWhatsApp('Quero garantir minha data com João Guilherme')" 
+                                    class="bg-gold-primary hover:bg-gold-accent text-dark-primary px-8 py-3 rounded-full font-bold hover-glow transition-all shadow-lg">
+                                Garanta Sua Data
                             </button>
                         </div>
                     </div>
                 </div>
-                
-                <div class="fade-in bg-white rounded-2xl p-6 shadow-lg opacity-60">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div class="mb-4 md:mb-0">
-                            <div class="flex items-center space-x-4 mb-2">
-                                <div class="bg-gray-400 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                    SET
-                                </div>
-                                <h3 class="text-xl font-bold text-gray-600">Em negociação</h3>
-                            </div>
-                            <p class="text-gray-500 flex items-center">
-                                <i class="fas fa-map-marker-alt mr-2"></i>
-                                Local a definir
-                            </p>
-                        </div>
-                        <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-semibold">
-                            Em breve
-                        </span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12 fade-in">
-                <button class="bg-brand-gold hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold text-lg transition-colors mr-4">
-                    🎤 Quero Contratar
-                </button>
-                <button class="border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-colors">
-                    Ver Agenda Completa
-                </button>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="galeria" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-display font-bold text-brand-dark mb-6">Galeria</h2>
-                <p class="text-xl text-gray-600">Fotos e vídeos dos bastidores, shows e estúdio</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="fade-in bg-gradient-to-br from-brand-gold to-brand-accent rounded-xl h-48 flex items-center justify-center">
-                    <div class="text-center text-white">
-                        <i class="fas fa-camera text-3xl mb-2"></i>
-                        <p class="text-sm font-semibold">Show ao vivo</p>
-                    </div>
-                </div>
-                <div class="fade-in bg-gray-200 rounded-xl h-48 flex items-center justify-center">
-                    <div class="text-center text-gray-600">
-                        <i class="fas fa-music text-3xl mb-2"></i>
-                        <p class="text-sm font-semibold">Estúdio</p>
-                    </div>
-                </div>
-                <div class="fade-in bg-gradient-to-br from-brand-earth to-brand-dark rounded-xl h-48 flex items-center justify-center">
-                    <div class="text-center text-white">
-                        <i class="fas fa-guitar text-3xl mb-2"></i>
-                        <p class="text-sm font-semibold">Bastidores</p>
-                    </div>
-                </div>
-                <div class="fade-in bg-gray-200 rounded-xl h-48 flex items-center justify-center">
-                    <div class="text-center text-gray-600">
-                        <i class="fas fa-microphone text-3xl mb-2"></i>
-                        <p class="text-sm font-semibold">Performance</p>
-                    </div>
-                </div>
-                <div class="fade-in bg-gray-200 rounded-xl h-48 flex items-center justify-center md:col-span-2">
-                    <div class="text-center text-gray-600">
-                        <i class="fas fa-video text-3xl mb-2"></i>
-                        <p class="text-sm font-semibold">Clipe oficial</p>
-                    </div>
-                </div>
-                <div class="fade-in bg-gradient-to-br from-brand-gold to-brand-accent rounded-xl h-48 flex items-center justify-center">
-                    <div class="text-center text-white">
-                        <i class="fas fa-heart text-3xl mb-2"></i>
-                        <p class="text-sm font-semibold">Fãs</p>
-                    </div>
-                </div>
-                <div class="fade-in bg-gray-200 rounded-xl h-48 flex items-center justify-center">
-                    <div class="text-center text-gray-600">
-                        <i class="fas fa-star text-3xl mb-2"></i>
-                        <p class="text-sm font-semibold">Eventos</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12 fade-in">
-                <button class="bg-brand-dark hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors">
-                    Ver Galeria Completa
-                </button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contato" class="py-20 bg-brand-dark text-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-display font-bold mb-6">Contato & Booking</h2>
-                <p class="text-xl opacity-90">Entre em contato para contratações, parcerias e imprensa</p>
+
+
+
+    <!-- Área de Patrocinadores -->
+    <section class="py-20 bg-dark-primary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Parceiros e Patrocinadores</h2>
+                <p class="text-gray-300 text-lg">Fortaleça sua marca ao lado de João Guilherme.</p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="fade-in">
-                    <form class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Nome Completo</label>
-                                <input type="text" class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg focus:outline-none focus:border-brand-gold text-white placeholder-gray-300" placeholder="Seu nome">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">E-mail</label>
-                                <input type="email" class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg focus:outline-none focus:border-brand-gold text-white placeholder-gray-300" placeholder="seu@email.com">
-                            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="glass-effect rounded-xl p-6 flex items-center justify-center hover-glow transition-all">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gold-primary rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-music text-2xl text-dark-primary"></i>
                         </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Telefone</label>
-                                <input type="tel" class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg focus:outline-none focus:border-brand-gold text-white placeholder-gray-300" placeholder="(62) 99999-9999">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Tipo de Contato</label>
-                                <select class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg focus:outline-none focus:border-brand-gold text-white">
-                                    <option value="">Selecione...</option>
-                                    <option value="show">Contratação de Show</option>
-                                    <option value="parceria">Parceria Musical</option>
-                                    <option value="imprensa">Imprensa</option>
-                                    <option value="outros">Outros</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Mensagem</label>
-                            <textarea rows="5" class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg focus:outline-none focus:border-brand-gold text-white placeholder-gray-300" placeholder="Descreva sua solicitação..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-brand-gold hover:bg-brand-accent text-white py-4 rounded-lg font-bold text-lg transition-colors">
-                            Enviar Mensagem 📩
-                        </button>
-                    </form>
+                        <p class="text-sm font-semibold">Gravadora XYZ</p>
+                    </div>
                 </div>
                 
-                <div class="fade-in space-y-8">
-                    <div class="bg-white bg-opacity-10 rounded-2xl p-8">
-                        <h3 class="text-2xl font-display font-bold mb-6">Contato Direto</h3>
-                        <div class="space-y-4">
-                            <a href="https://wa.me/5562999999999" class="flex items-center space-x-4 text-brand-gold hover:text-white transition-colors">
-                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                                    <i class="fab fa-whatsapp text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">WhatsApp</p>
-                                    <p class="text-sm opacity-75">(62) 99999-9999</p>
-                                </div>
-                            </a>
-                            
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center">
-                                    <i class="fas fa-envelope text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">E-mail Profissional</p>
-                                    <p class="text-sm opacity-75">contato@joaoguilhermecantor.com.br</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-brand-earth rounded-full flex items-center justify-center">
-                                    <i class="fas fa-map-marker-alt text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Localização</p>
-                                    <p class="text-sm opacity-75">Mineiros, Goiás - Brasil</p>
-                                </div>
-                            </div>
+                <div class="glass-effect rounded-xl p-6 flex items-center justify-center hover-glow transition-all">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-accent rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-guitar text-2xl"></i>
                         </div>
-                    </div>
-                    
-                    <div class="bg-white bg-opacity-10 rounded-2xl p-8">
-                        <h3 class="text-2xl font-display font-bold mb-6">Siga nas Redes</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <a href="#" class="flex items-center space-x-3 text-white hover:text-brand-gold transition-colors">
-                                <i class="fab fa-instagram text-2xl"></i>
-                                <span>Instagram</span>
-                            </a>
-                            <a href="#" class="flex items-center space-x-3 text-white hover:text-brand-gold transition-colors">
-                                <i class="fab fa-tiktok text-2xl"></i>
-                                <span>TikTok</span>
-                            </a>
-                            <a href="#" class="flex items-center space-x-3 text-white hover:text-brand-gold transition-colors">
-                                <i class="fab fa-youtube text-2xl"></i>
-                                <span>YouTube</span>
-                            </a>
-                            <a href="#" class="flex items-center space-x-3 text-white hover:text-brand-gold transition-colors">
-                                <i class="fab fa-spotify text-2xl"></i>
-                                <span>Spotify</span>
-                            </a>
-                        </div>
+                        <p class="text-sm font-semibold">Instrumentos ABC</p>
                     </div>
                 </div>
+                
+                <div class="glass-effect rounded-xl p-6 flex items-center justify-center hover-glow transition-all">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-accent rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-microphone text-2xl"></i>
+                        </div>
+                        <p class="text-sm font-semibold">Áudio Pro</p>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 flex items-center justify-center hover-glow transition-all">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-accent rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-tshirt text-2xl"></i>
+                        </div>
+                        <p class="text-sm font-semibold">Moda Country</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-gray-300 mb-6">Interessado em uma parceria?</p>
+                <button onclick="openWhatsApp('Olá! Tenho interesse em uma parceria comercial com João Guilherme')" 
+                        class="bg-blue-accent hover:bg-blue-primary px-8 py-3 rounded-full font-semibold hover-glow transition-all">
+                    💼 Seja um Parceiro
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-8">
-                <div class="flex items-center justify-center space-x-3 mb-4">
-                    <div class="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center">
-                        <i class="fas fa-music text-xl"></i>
+    <footer id="contato" class="py-16 bg-dark-secondary border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="text-2xl font-bold gradient-text mb-4">João Guilherme</div>
+                    <p class="text-gray-400 mb-6">A nova voz do sertanejo pop brasileiro.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/j.guilherme_cantor" target="_blank" class="w-10 h-10 bg-blue-accent rounded-full flex items-center justify-center hover-glow transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" onclick="showNotification('🎵 YouTube', 'Canal em breve! Músicas em produção com Bruma Music', 'fab fa-youtube')" class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover-glow transition-all opacity-50">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" onclick="showNotification('🎵 Spotify', 'Músicas em produção! Em breve nas plataformas', 'fab fa-spotify')" class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover-glow transition-all opacity-50">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="#" onclick="openSocial('tiktok')" class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center hover-glow transition-all">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
                     </div>
-                    <h3 class="text-3xl font-display font-bold logo-text">João Guilherme</h3>
                 </div>
-                <p class="text-gray-400">A nova voz do sertanejo brasileiro</p>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Links Rápidos</h3>
+                    <div class="space-y-2">
+                        <a href="#agenda" class="block text-gray-400 hover:text-blue-accent transition-colors">Agenda</a>
+                        <a href="#contratacao" class="block text-gray-400 hover:text-blue-accent transition-colors">Contratação</a>
+                        <a href="#blog" class="block text-gray-400 hover:text-blue-accent transition-colors">Blog</a>
+                        <a href="#contato" class="block text-gray-400 hover:text-blue-accent transition-colors">Contato</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Contato</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-envelope mr-2"></i> joaoguisilva2008@gmail.com</p>
+                        <p><i class="fab fa-whatsapp mr-2"></i> (64) 99625-9823</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Mineiros, GO | Região Sudoeste</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Receba novidades e lançamentos</p>
+                    <form id="newsletter-form" class="space-y-3">
+                        <input type="email" id="newsletter-email" required 
+                               placeholder="Seu e-mail" 
+                               class="w-full bg-dark-primary border border-gray-600 rounded-lg px-4 py-2 focus:border-blue-accent focus:outline-none">
+                        <button type="submit" class="w-full bg-blue-accent hover:bg-blue-primary py-2 rounded-lg font-semibold hover-glow transition-all">
+                            Inscrever-se
+                        </button>
+                    </form>
+                </div>
             </div>
             
-            <div class="flex justify-center space-x-8 mb-8">
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl" aria-label="TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl" aria-label="Threads">
-                    <i class="fab fa-threads"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl" aria-label="Twitter">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl" aria-label="Spotify">
-                    <i class="fab fa-spotify"></i>
-                </a>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-                <p class="mb-4">© 2024 João Guilherme. Todos os direitos reservados.</p>
-                <div class="space-x-6">
-                    <a href="#" class="hover:text-brand-gold transition-colors">Termos de Uso</a>
-                    <a href="#" class="hover:text-brand-gold transition-colors">Política de Privacidade</a>
-                    <a href="#" class="hover:text-brand-gold transition-colors">Imprensa</a>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 João Guilherme. Todos os direitos reservados.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-blue-accent transition-colors">Política de Privacidade</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-accent transition-colors">Termos de Uso</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Chatbot -->
+    <div id="chatbot" class="fixed bottom-6 right-6 z-50">
+        <button id="chatbot-btn" onclick="toggleChatbot()" 
+                class="w-16 h-16 bg-blue-accent rounded-full flex items-center justify-center chatbot-pulse hover-glow transition-all">
+            <i class="fas fa-comments text-xl"></i>
+        </button>
+        
+        <div id="chatbot-window" class="hidden absolute bottom-20 right-0 w-80 h-96 glass-effect rounded-xl overflow-hidden">
+            <div class="bg-blue-accent p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <i class="fas fa-robot text-blue-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">JoãoBot</h3>
+                            <p class="text-xs opacity-90">Online agora</p>
+                        </div>
+                    </div>
+                    <button onclick="toggleChatbot()" class="text-white hover:text-gray-200">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="chat-messages" class="flex-1 p-4 h-64 overflow-y-auto">
+                <div class="bg-gray-700 rounded-lg p-3 mb-3">
+                    <p class="text-sm">Oi! Sou o JoãoBot, posso te ajudar? 😊</p>
+                </div>
+            </div>
+            
+            <div class="p-4 border-t border-gray-600">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Digite sua mensagem..." 
+                           class="flex-1 bg-dark-primary border border-gray-600 rounded-lg px-3 py-2 text-sm focus:border-blue-accent focus:outline-none">
+                    <button onclick="sendMessage()" class="bg-blue-accent hover:bg-blue-primary px-4 py-2 rounded-lg">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+        <div class="glass-effect rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-gray-600">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-2xl font-bold gradient-text">Agenda Completa</h2>
+                    <button onclick="closeCalendar()" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <p class="text-gray-300 mt-2">Clique em uma data para ver detalhes e reservar</p>
+            </div>
+            
+            <div class="p-6">
+                <div class="text-center mb-6">
+                    <h3 id="month-year" class="text-xl font-semibold text-gold-accent mb-4">Agosto 2025</h3>
+                    
+                    <!-- Calendar Header -->
+                    <div class="grid grid-cols-7 gap-2 mb-4">
+                        <div class="p-2 text-center font-semibold text-gray-400">Dom</div>
+                        <div class="p-2 text-center font-semibold text-gray-400">Seg</div>
+                        <div class="p-2 text-center font-semibold text-gray-400">Ter</div>
+                        <div class="p-2 text-center font-semibold text-gray-400">Qua</div>
+                        <div class="p-2 text-center font-semibold text-gray-400">Qui</div>
+                        <div class="p-2 text-center font-semibold text-gray-400">Sex</div>
+                        <div class="p-2 text-center font-semibold text-gray-400">Sáb</div>
+                    </div>
+                    
+                    <!-- Calendar Grid -->
+                    <div id="calendar-grid" class="grid grid-cols-7 gap-2 mb-6">
+                        <!-- Days will be generated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Legend -->
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <span>Disponível (Dom, Qui, Sex, Sáb)</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span>Show Público</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <span>Show Privado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Details Modal -->
+    <div id="event-details-modal" class="hidden fixed inset-0 z-60 flex items-center justify-center bg-black bg-opacity-75">
+        <div class="glass-effect rounded-xl max-w-md w-full mx-4">
+            <div class="p-6 border-b border-gray-600">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold gradient-text">Detalhes do Show</h3>
+                    <button onclick="closeEventDetails()" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6">
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <label class="text-sm text-gray-400">Data</label>
+                        <p id="event-date-detail" class="font-semibold text-gold-accent"></p>
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-400">Cidade</label>
+                        <p id="event-city-detail" class="font-semibold"></p>
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-400">Local</label>
+                        <p id="event-venue-detail" class="font-semibold"></p>
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-400">Status</label>
+                        <div>
+                            <span id="event-status-detail" class="px-3 py-1 rounded-full text-sm font-semibold"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="event-actions" class="flex space-x-3">
+                    <!-- Action buttons will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificações Push -->
+    <div id="notification" class="fixed top-24 right-6 z-40 notification-slide">
+        <div class="glass-effect rounded-xl p-4 max-w-sm">
+            <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-blue-accent rounded-full flex items-center justify-center flex-shrink-0">
+                    <i id="notification-icon" class="fas fa-bell text-sm"></i>
+                </div>
+                <div class="flex-1">
+                    <h4 id="notification-title" class="font-semibold text-sm mb-1"></h4>
+                    <p id="notification-message" class="text-xs text-gray-300"></p>
+                </div>
+                <button onclick="closeNotification()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        // Music Player Functions
+        let isPlaying = false;
+        let currentSong = 0;
+        const songs = ['Coração Sertanejo', 'Noite de Lua', 'Amor Sertanejo'];
+
+        function togglePlay() {
+            const playBtn = document.getElementById('play-btn');
+            const icon = playBtn.querySelector('i');
+            
+            if (isPlaying) {
+                icon.className = 'fas fa-play';
+                isPlaying = false;
+            } else {
+                icon.className = 'fas fa-pause';
+                isPlaying = true;
+                simulateProgress();
+            }
+        }
+
+        function playMusic() {
+            togglePlay();
+        }
+
+        function playNext() {
+            currentSong = (currentSong + 1) % songs.length;
+            updateCurrentSong();
+        }
+
+        function playPrevious() {
+            currentSong = currentSong === 0 ? songs.length - 1 : currentSong - 1;
+            updateCurrentSong();
+        }
+
+        function updateCurrentSong() {
+            // Update song display logic here
+            console.log('Playing:', songs[currentSong]);
+        }
+
+        function simulateProgress() {
+            if (isPlaying) {
+                const progressBar = document.getElementById('progress-bar');
+                let width = parseInt(progressBar.style.width) || 30;
+                if (width < 100) {
+                    progressBar.style.width = (width + 1) + '%';
+                    setTimeout(simulateProgress, 1000);
                 }
-            });
-        }, observerOptions);
+            }
+        }
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        // Music Status
+        function showMusicStatus() {
+            showNotification('🎵 Bruma Music', 'Músicas em produção! Em breve nas plataformas', 'fas fa-compact-disc');
+        }
 
-        // Newsletter popup
-        setTimeout(() => {
-            document.getElementById('newsletter-popup').classList.remove('hidden');
-            document.getElementById('newsletter-popup').classList.add('flex');
-        }, 10000);
+        function openWhatsApp(message) {
+            const url = `https://wa.me/qr/Q3X7ZHMGLDCGG1?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
 
-        document.getElementById('close-popup').addEventListener('click', () => {
-            document.getElementById('newsletter-popup').classList.add('hidden');
-        });
+        // Video Functions
+        function playVideo(videoId) {
+            showNotification('🎬 Vídeo', 'Carregando vídeo...', 'fas fa-play');
+            console.log('Playing video:', videoId);
+        }
 
-        document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+        // Schedule Functions
+        function buyTickets(city) {
+            showNotification('🎟️ Ingressos', `Redirecionando para ingressos de ${city}...`, 'fas fa-ticket-alt');
+            setTimeout(() => {
+                window.open('https://www.ticketmaster.com.br', '_blank');
+            }, 1500);
+        }
+
+        function addToCalendar(city) {
+            showNotification('📅 Agenda', `Evento de ${city} adicionado à sua agenda!`, 'fas fa-calendar-plus');
+        }
+
+        function showOnMap(location) {
+            showNotification('🗺️ Mapa', `Mostrando localização: ${location}`, 'fas fa-map-marker-alt');
+        }
+
+        function viewFullSchedule() {
+            document.getElementById('calendar-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            generateCalendar();
+        }
+
+        function closeCalendar() {
+            document.getElementById('calendar-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function generateCalendar() {
+            const calendarGrid = document.getElementById('calendar-grid');
+            const monthYear = document.getElementById('month-year');
+            
+            const now = new Date();
+            const currentMonth = now.getMonth();
+            const currentYear = now.getFullYear();
+            
+            const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
+                           'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            
+            monthYear.textContent = `${months[currentMonth]} ${currentYear}`;
+            
+            // Only your real shows in Mineiros
+            const shows = {
+                '2': { city: 'Mineiros, GO', venue: 'Show Particular', status: 'private' },
+                '29': { city: 'Mineiros, GO', venue: 'IPE Shopping', status: 'confirmed' }
+            };
+            
+            // Clear previous calendar
+            calendarGrid.innerHTML = '';
+            
+            // Get first day of month and number of days
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            
+            // Add empty cells for days before month starts
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'p-2';
+                calendarGrid.appendChild(emptyDay);
+            }
+            
+            // Add days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'p-2 text-center cursor-pointer hover:bg-dark-accent rounded-lg transition-colors';
+                
+                // Get day of week (0 = Sunday, 1 = Monday, etc.)
+                const dayOfWeek = new Date(currentYear, currentMonth, day).getDay();
+                
+                if (shows[day]) {
+                    // Show confirmed shows
+                    const show = shows[day];
+                    dayElement.className += ' relative';
+                    
+                    let statusColor = 'bg-yellow-500';
+                    let statusText = 'Disponível';
+                    
+                    if (show.status === 'confirmed') {
+                        statusColor = 'bg-green-500';
+                        statusText = 'Confirmado';
+                    } else if (show.status === 'private') {
+                        statusColor = 'bg-red-500';
+                        statusText = 'Privado';
+                    }
+                    
+                    dayElement.innerHTML = `
+                        <div class="font-semibold">${day}</div>
+                        <div class="w-2 h-2 ${statusColor} rounded-full mx-auto mt-1"></div>
+                    `;
+                    
+                    dayElement.onclick = () => showEventDetails(day, show, statusText);
+                } else if (dayOfWeek === 0 || dayOfWeek === 4 || dayOfWeek === 5 || dayOfWeek === 6) {
+                    // Available days: Sunday (0), Thursday (4), Friday (5), Saturday (6)
+                    dayElement.className += ' relative';
+                    dayElement.innerHTML = `
+                        <div class="font-semibold">${day}</div>
+                        <div class="w-2 h-2 bg-yellow-500 rounded-full mx-auto mt-1"></div>
+                    `;
+                    
+                    dayElement.onclick = () => showAvailableDate(day, dayOfWeek);
+                } else {
+                    // Regular days (not available for shows)
+                    dayElement.innerHTML = `<div class="text-gray-500">${day}</div>`;
+                }
+                
+                calendarGrid.appendChild(dayElement);
+            }
+        }
+
+        function showEventDetails(day, show, statusText) {
+            const modal = document.getElementById('event-details-modal');
+            const eventDate = document.getElementById('event-date-detail');
+            const eventCity = document.getElementById('event-city-detail');
+            const eventVenue = document.getElementById('event-venue-detail');
+            const eventStatus = document.getElementById('event-status-detail');
+            const eventActions = document.getElementById('event-actions');
+            
+            eventDate.textContent = `${day} de Agosto, 2025`;
+            eventCity.textContent = show.city;
+            eventVenue.textContent = show.venue;
+            eventStatus.textContent = statusText;
+            
+            // Set status color
+            eventStatus.className = 'px-3 py-1 rounded-full text-sm font-semibold ';
+            if (show.status === 'confirmed') {
+                eventStatus.className += 'bg-green-500 text-white';
+            } else if (show.status === 'private') {
+                eventStatus.className += 'bg-red-500 text-white';
+            } else {
+                eventStatus.className += 'bg-yellow-500 text-dark-primary';
+            }
+            
+            // Set action buttons
+            if (show.status === 'available') {
+                eventActions.innerHTML = `
+                    <button onclick="bookShow('${show.city}', '${day}')" 
+                            class="bg-gold-primary hover:bg-gold-accent text-dark-primary px-6 py-3 rounded-full font-semibold hover-glow transition-all flex-1">
+                        🎫 Reservar Show
+                    </button>
+                    <button onclick="requestInfo('${show.city}', '${day}')" 
+                            class="border border-gold-primary hover:bg-gold-primary hover:text-dark-primary text-gold-primary px-6 py-3 rounded-full hover-glow transition-all flex-1">
+                        ℹ️ Mais Info
+                    </button>
+                `;
+            } else if (show.status === 'confirmed') {
+                eventActions.innerHTML = `
+                    <button onclick="requestInfo('${show.city}', '${day}')" 
+                            class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover-glow transition-all flex-1">
+                        ℹ️ Informações do Show
+                    </button>
+                `;
+            } else {
+                eventActions.innerHTML = `
+                    <button onclick="requestPrivateInfo('${show.city}', '${day}')" 
+                            class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold hover-glow transition-all flex-1">
+                        💬 Contato Privado
+                    </button>
+                `;
+            }
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeEventDetails() {
+            document.getElementById('event-details-modal').classList.add('hidden');
+        }
+
+        function bookShow(city, day) {
+            const message = `Olá! Gostaria de reservar o show do dia ${day} de Agosto em ${city}`;
+            openWhatsApp(message);
+            closeEventDetails();
+            closeCalendar();
+        }
+
+        function requestInfo(city, day) {
+            const message = `Olá! Gostaria de mais informações sobre o show do dia ${day} de Agosto em ${city}`;
+            openWhatsApp(message);
+            closeEventDetails();
+            closeCalendar();
+        }
+
+        function requestPrivateInfo(city, day) {
+            const message = `Olá! Gostaria de informações sobre shows particulares como o do dia ${day} de Agosto`;
+            openWhatsApp(message);
+            closeEventDetails();
+            closeCalendar();
+        }
+
+        function showAvailableDate(day, dayOfWeek) {
+            const dayNames = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+            const dayName = dayNames[dayOfWeek];
+            
+            const modal = document.getElementById('event-details-modal');
+            const eventDate = document.getElementById('event-date-detail');
+            const eventCity = document.getElementById('event-city-detail');
+            const eventVenue = document.getElementById('event-venue-detail');
+            const eventStatus = document.getElementById('event-status-detail');
+            const eventActions = document.getElementById('event-actions');
+            
+            eventDate.textContent = `${dayName}, ${day} de Agosto, 2025`;
+            eventCity.textContent = 'Data Disponível';
+            eventVenue.textContent = 'Aguardando contratação';
+            eventStatus.textContent = 'Disponível';
+            eventStatus.className = 'px-3 py-1 rounded-full text-sm font-semibold bg-yellow-500 text-dark-primary';
+            
+            eventActions.innerHTML = `
+                <button onclick="bookAvailableDate('${day}', '${dayName}')" 
+                        class="bg-gold-primary hover:bg-gold-accent text-dark-primary px-6 py-3 rounded-full font-semibold hover-glow transition-all flex-1">
+                    🎫 Reservar Esta Data
+                </button>
+                <button onclick="requestDateInfo('${day}', '${dayName}')" 
+                        class="border border-gold-primary hover:bg-gold-primary hover:text-dark-primary text-gold-primary px-6 py-3 rounded-full hover-glow transition-all flex-1">
+                    💬 Mais Info
+                </button>
+            `;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function bookAvailableDate(day, dayName) {
+            const message = `Olá! Gostaria de reservar o show para ${dayName}, ${day} de Agosto, 2025`;
+            openWhatsApp(message);
+            closeEventDetails();
+            closeCalendar();
+        }
+
+        function requestDateInfo(day, dayName) {
+            const message = `Olá! Gostaria de mais informações sobre disponibilidade para ${dayName}, ${day} de Agosto, 2025`;
+            openWhatsApp(message);
+            closeEventDetails();
+            closeCalendar();
+        }
+
+        // Form Submissions
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Obrigado! Você será notificado sobre todos os lançamentos! 🎵');
-            document.getElementById('newsletter-popup').classList.add('hidden');
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            showNotification('✅ Enviado', 'Orçamento solicitado com sucesso!', 'fas fa-check');
+            
+            // Create WhatsApp message
+            const message = `Olá! Solicito orçamento para evento:
+Nome: ${data.name}
+Telefone: ${data.phone}
+Email: ${data.email}
+Tipo: ${data['event-type']}
+Data: ${data['event-date']}
+Cidade: ${data.city}
+Público: ${data.audience}
+Observações: ${data.message}`;
+            
+            setTimeout(() => {
+                openWhatsApp(message);
+            }, 2000);
         });
 
-        // Smooth scrolling
+        document.getElementById('vip-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('vip-email').value;
+            
+            // Simulate Mailchimp integration
+            showNotification('🎁 VIP Club', 'Bem-vindo ao Fã Clube VIP!', 'fas fa-crown');
+            
+            // Reset form
+            this.reset();
+        });
+
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            
+            showNotification('📧 Newsletter', 'Inscrição realizada com sucesso!', 'fas fa-envelope');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Blog Functions
+        function readArticle(articleId) {
+            showNotification('📖 Blog', 'Carregando artigo...', 'fas fa-book-open');
+            console.log('Reading article:', articleId);
+        }
+
+        function viewAllPosts() {
+            showNotification('📚 Blog', 'Carregando todos os posts...', 'fas fa-blog');
+        }
+
+        // Social Media
+        function openSocial(platform) {
+            const urls = {
+                instagram: 'https://www.instagram.com/j.guilherme_cantor',
+                youtube: 'https://youtube.com/@joaoguilherme',
+                spotify: 'https://open.spotify.com/artist/joaoguilherme',
+                tiktok: 'https://tiktok.com/@joaoguilherme'
+            };
+            
+            if (urls[platform]) {
+                window.open(urls[platform], '_blank');
+            }
+        }
+
+        // Chatbot Functions
+        function toggleChatbot() {
+            const chatWindow = document.getElementById('chatbot-window');
+            chatWindow.classList.toggle('hidden');
+            
+            if (!chatWindow.classList.contains('hidden')) {
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                addChatMessage(message, 'user');
+                input.value = '';
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    const responses = [
+                        'Posso te ajudar com informações sobre shows, contratação ou músicas! 🎵',
+                        'Para contratar João Guilherme, clique em "Contratação" no menu ou fale comigo no WhatsApp! 📱',
+                        'Quer saber sobre os próximos shows? Confira a agenda! 🎫',
+                        'Já conhece o Fã Clube VIP? Tem benefícios exclusivos! 👑'
+                    ];
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addChatMessage(randomResponse, 'bot');
+                }, 1000);
+            }
+        }
+
+        function addChatMessage(message, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            
+            if (sender === 'user') {
+                messageDiv.className = 'bg-blue-accent rounded-lg p-3 mb-3 ml-8';
+                messageDiv.innerHTML = `<p class="text-sm">${message}</p>`;
+            } else {
+                messageDiv.className = 'bg-gray-700 rounded-lg p-3 mb-3 mr-8';
+                messageDiv.innerHTML = `<p class="text-sm">${message}</p>`;
+            }
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // Enter key for chat
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Notification System
+        function showNotification(title, message, icon = 'fas fa-bell') {
+            const notification = document.getElementById('notification');
+            const titleEl = document.getElementById('notification-title');
+            const messageEl = document.getElementById('notification-message');
+            const iconEl = document.getElementById('notification-icon');
+            
+            titleEl.textContent = title;
+            messageEl.textContent = message;
+            iconEl.className = icon + ' text-sm';
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                closeNotification();
+            }, 5000);
+        }
+
+        function closeNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.remove('show');
+        }
+
+        // Auto-show notifications
+        function showRandomNotifications() {
+            const notifications = [
+                { title: '🚀 Nova Data', message: 'Show confirmado em Brasília! Garanta seu ingresso.', icon: 'fas fa-rocket' },
+                { title: '🎶 Lançamento', message: 'Nova música no ar! Ouça agora mesmo.', icon: 'fas fa-music' },
+                { title: '🎁 VIP', message: 'Vantagens exclusivas para fãs VIP disponíveis!', icon: 'fas fa-gift' }
+            ];
+            
+            setInterval(() => {
+                if (Math.random() > 0.7) { // 30% chance
+                    const randomNotification = notifications[Math.floor(Math.random() * notifications.length)];
+                    showNotification(randomNotification.title, randomNotification.message, randomNotification.icon);
+                }
+            }, 30000); // Every 30 seconds
+        }
+
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -706,57 +1212,42 @@
             });
         });
 
-        // Form submission
-        document.querySelector('#contato form').addEventListener('submit', (e) => {
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start random notifications after 10 seconds
+            setTimeout(showRandomNotifications, 10000);
+            
+            // Show welcome notification
+            setTimeout(() => {
+                showNotification('👋 Bem-vindo', 'Conheça João Guilherme, a nova voz do sertanejo pop!', 'fas fa-star');
+            }, 3000);
+        });
+
+        // PWA Installation
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
-            alert('Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve. 📩');
-            e.target.reset();
+            deferredPrompt = e;
+            
+            // Show install notification
+            setTimeout(() => {
+                showNotification('📱 App', 'Instale o app para uma experiência completa!', 'fas fa-mobile-alt');
+            }, 15000);
         });
 
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
+        // Analytics tracking (placeholder)
+        function trackEvent(category, action, label) {
+            // Google Analytics 4 / Meta Pixel tracking would go here
+            console.log('Event tracked:', category, action, label);
+        }
 
-        // Button functionalities
-        document.querySelectorAll('button').forEach(button => {
-            const text = button.textContent.toLowerCase();
-            
-            if (text.includes('ouça agora') || text.includes('ouça')) {
-                button.addEventListener('click', () => {
-                    document.querySelector('#musicas').scrollIntoView({ behavior: 'smooth' });
-                });
-            }
-            
-            if (text.includes('ver shows') || text.includes('agenda')) {
-                button.addEventListener('click', () => {
-                    document.querySelector('#agenda').scrollIntoView({ behavior: 'smooth' });
-                });
-            }
-            
-            if (text.includes('contratar') || text.includes('booking')) {
-                button.addEventListener('click', () => {
-                    document.querySelector('#contato').scrollIntoView({ behavior: 'smooth' });
-                });
-            }
-            
-            if (text.includes('spotify')) {
-                button.addEventListener('click', () => {
-                    window.open('https://open.spotify.com/artist/joaoguilherme', '_blank');
-                });
-            }
-            
-            if (text.includes('youtube') || text.includes('assistir')) {
-                button.addEventListener('click', () => {
-                    window.open('https://youtube.com/@joaoguilhermeoficial', '_blank');
-                });
+        // Track button clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'BUTTON') {
+                trackEvent('Button', 'Click', e.target.textContent);
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'966d53b4c3a688fb',t:'MTc1Mzc5OTU2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'968c3c25f6118760',t:'MTc1NDEyMzY1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
